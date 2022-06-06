@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>local storage</title>
+</head>
+<body>
+<h1>welcome </h1>
+<button id="add" onclick="userDetails()">add</button>
+<script>
+    var btn = document.querySelector("#add");
+    var cls = document.querySelector("#cls");
+    var title=document.querySelector("h1");
+    function userDetails(){
+    var name=prompt("please enter your name");
+    localStorage.setItem("username",name);
+    title.textContent="welcome "+name;
+    }
+    if(!localStorage.getItem("username"))
+    {
+    userDetails();
+    }
+    else{
+    var name=localStorage.getItem("username");
+    title.textContent="welcome "+name;
+
+    }
+</script>
+</body>
+</html>
